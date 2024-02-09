@@ -1,0 +1,43 @@
+.header-background {
+    background-color: #33006F;
+    padding: 0 20px;
+
+}
+
+.header-text {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 20px;
+
+}
+
+.main-content {
+    margin-top: 90px;
+}
+
+.dropdown.w3-button {
+    margin-right: 10px;
+}
+
+.w3-right {
+    margin-left: auto; 
+}
+
+.w3-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.w3-top .w3-button {
+    order: 1;
+}
+
+.w3-top .w3-right {
+    order: 3;
+}
+
+.w3-top .w3-left {
+    order: 2;
+}
