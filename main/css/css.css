@@ -41,3 +41,13 @@
 .w3-top .w3-left {
     order: 2;
 }
+
+.card-body img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 50%;
+
+
+  }
+  
