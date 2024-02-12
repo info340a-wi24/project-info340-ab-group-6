@@ -8,6 +8,13 @@ body, html {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.body.background-image{
+    background-image:("sign-in\Images\uwflag.jpeg");
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; 
+}
+
 .container {
     display: flex;
     justify-content: center;
