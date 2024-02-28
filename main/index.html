@@ -16,57 +16,67 @@
 </head>
 <body>
 
-    <header class="w3-top header-background">
-        <nav>
-            <div class="w3-left w3-padding-16 header-text">Dub Match</div>
-            <div class="dropdown">
-              <button class="dropbtn">Location</button>
-              <div class="dropdown-content">
-                <a href="#">North Campus</a>
-                <a href="#">West Campus</a>
-                <a href="#">UVillage</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropbtn">Price Range</button>
-              <div class="dropdown-content">
-                <a href="#">800 - 1000</a>
-                <a href="#">1000 - 1200</a>
-                <a href="#">1200 - 1400</a>
-                <a href="#">1400 - 1600</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropbtn">School Year</button>
-              <div class="dropdown-content">
-                <a href="#">Freshman</a>
-                <a href="#">Sophmore</a>
-                <a href="#">Junior</a>
-                <a href="#">Senior</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropbtn">Building Type</button>
-              <div class="dropdown-content">
-                <a href="#">Dorm</a>
-                <a href="#">Apartment</a>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropbtn">Gender</button>
-              <div class="dropdown-content">
-                <a href="#">Male</a>
-                <a href="#">Female</a>
-                <a href="#">They/Them</a>
-                <a href="#">Other</a>
-              </div>
-            </div>
-            <div class="w3-right w3-padding-16">
-                <button type="button">Log In</button>
-            </div>
-            
-        </nav>
-    </header>
+  <header class="w3-top header-background">
+    <nav>
+      <div class="w3-left w3-padding-16 header-text">Dub Match</div>
+      
+      <!-- Location Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Location</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="location" value="North Campus"> North Campus</label>
+          <label><input type="checkbox" name="location" value="West Campus"> West Campus</label>
+          <label><input type="checkbox" name="location" value="UVillage"> UVillage</label>
+        </div>
+      </div>
+      
+      <!-- Price Range Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Price Range</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="price" value="800 - 1000"> 800 - 1000</label>
+          <label><input type="checkbox" name="price" value="1000 - 1200"> 1000 - 1200</label>
+          <label><input type="checkbox" name="price" value="1200 - 1400"> 1200 - 1400</label>
+          <label><input type="checkbox" name="price" value="1400 - 1600"> 1400 - 1600</label>
+        </div>
+      </div>
+      
+      <!-- School Year Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">School Year</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="year" value="Freshman"> Freshman</label>
+          <label><input type="checkbox" name="year" value="Sophomore"> Sophomore</label>
+          <label><input type="checkbox" name="year" value="Junior"> Junior</label>
+          <label><input type="checkbox" name="year" value="Senior"> Senior</label>
+        </div>
+      </div>
+      
+      <!-- Building Type Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Building Type</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="building" value="Dorm"> Dorm</label>
+          <label><input type="checkbox" name="building" value="Apartment"> Apartment</label>
+        </div>
+      </div>
+      
+      <!-- Gender Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Gender</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="gender" value="Male"> Male</label>
+          <label><input type="checkbox" name="gender" value="Female"> Female</label>
+          <label><input type="checkbox" name="gender" value="They/Them"> They/Them</label>
+          <label><input type="checkbox" name="gender" value="Other"> Other</label>
+        </div>
+      </div>
+      
+      <div class="w3-right w3-padding-16">
+        <button type="button">Log In</button>
+      </div>
+    </nav>
+  </header>
 
   
 <main class="main-content">
@@ -74,7 +84,7 @@
       <div class="row">
         <!-- Card 1 -->
         <div class="col-md-6 col-xl-3 d-flex">
-          <div class="card mb-4">
+          <div class="card mb-4" data-location="North Campus" data-price="800 - 1000" data-year="Freshman" data-building="Dorm" data-gender="Male">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-auto col-xl-12">
@@ -94,7 +104,7 @@
 
         <!-- Card 2 -->
         <div class="col-md-6 col-xl-3 d-flex">
-          <div class="card mb-4">
+          <div class="card mb-4" data-location="West Campus" data-price="1200 - 1400" data-year="Junior" data-building="Apartment" data-gender="Other">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-auto col-xl-12">
@@ -113,7 +123,7 @@
 
         <!-- Card 3 -->
         <div class="col-md-6 col-xl-3 d-flex">
-          <div class="card mb-4">
+          <div class="card mb-4" data-location="North Campus" data-price="1000 - 1200" data-year="Sophomore" data-building="Dorm" data-gender="Male">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-auto col-xl-12">
@@ -132,7 +142,7 @@
 
         <!-- Card 4 -->
         <div class="col-md-6 col-xl-3 d-flex">
-          <div class="card mb-4">
+          <div class="card mb-4" data-location="North Campus" data-price="800 - 1000" data-year="Freshman" data-building="Dorm" data-gender="Female">
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-auto col-xl-12">
@@ -150,15 +160,15 @@
         </div>
 
         <div class="col-md-6 col-xl-3 d-flex">
-            <div class="card mb-4">
+            <div class="card mb-4" data-location="West Campus" data-price="1400 - 1600" data-year="Senior" data-building="Apartment" data-gender="They/Them">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-auto col-xl-12">
                     <img src="images/test4.jpg" alt="the club suit symbol" class="pb-3">
                   </div>
                   <div class="col-sm">
-                    <h2 class="card-title">Jon 17</h2>
-                    <p>pronouns</p>
+                    <h2 class="card-title">Jon 23</h2>
+                    <p>They/Them</p>
                     <p>Biology</p>
                     <p class="card-text">Freshman studying biology hoping to become a doctor one day</p>                   
                   </div>
@@ -169,7 +179,7 @@
           </div>
 
           <div class="col-md-6 col-xl-3 d-flex">
-            <div class="card mb-4">
+            <div class="card mb-4" data-location="North Campus" data-price="1000 - 1200" data-year="Freshman" data-building="Dorm" data-gender="Male">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-auto col-xl-12">
@@ -188,7 +198,7 @@
           </div>
 
           <div class="col-md-6 col-xl-3 d-flex">
-            <div class="card mb-4">
+            <div class="card mb-4" data-location="West Campus" data-price="800 - 1000" data-year="Freshman" data-building="Apartment" data-gender="Female">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-auto col-xl-12">
@@ -207,7 +217,7 @@
           </div>
 
           <div class="col-md-6 col-xl-3 d-flex">
-            <div class="card mb-4">
+            <div class="card mb-4" data-location="West Campus" data-price="1000 - 1200" data-year="Junior" data-building="Apartment" data-gender="Female">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-auto col-xl-12">
@@ -262,6 +272,7 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+<script src="js/index.js"></script>
 
 </body>
 </html>
