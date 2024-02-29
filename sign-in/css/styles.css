@@ -4,7 +4,7 @@ body, html {
     background-image: url('sign-in\Images\uwflag.jpeg');
     background-size: cover;
     background-position: center;
-    color: #FFD700;
+    color: #800080;
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -19,14 +19,14 @@ body, html {
 .card {
     width: 35rem;
     background-color: #FFFFFF;
-    border: 2px solid #FFD700;
+    border: 2px solid #800080;
     color: #800080;
 }
 
 .card-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #FFD700;
+    color: #800080;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -38,7 +38,7 @@ body, html {
 
 .form-control {
     border-radius: 0;
-    border: 2px solid #FFD700;
+    border: 2px solid #800080;
     color: #800080;
     background-color: #FFFFFF;
 }
@@ -47,7 +47,7 @@ body, html {
     width: 100%;
     background-color: #007bff;
     border-color: #007bff;
-    color: #FFD700; 
+    color: #800080; 
 }
 
 .btn-primary:hover {
