@@ -1,8 +1,13 @@
 .header-background {
     background-color: #33006F;
     padding: 0 20px;
-
+    width: 100%; /* Ensure full width */
+    position: fixed; /* Fix position to the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    z-index: 100; /* Ensure it stays on top of other content */
 }
+
 
 .header-text {
     color: white;
