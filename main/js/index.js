@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App'; // Import the App component
+
+
 document.addEventListener("DOMContentLoaded", function() {
   // Listen for changes on checkboxes
   document.querySelectorAll('input[type="checkbox"]').forEach(item => {
