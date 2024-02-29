@@ -2,6 +2,7 @@ body {
     background-image: url('uwflag.jpg');
     background-size: cover;
     background-position: center;
+    color: purple;
 }
 
 .card-link {
