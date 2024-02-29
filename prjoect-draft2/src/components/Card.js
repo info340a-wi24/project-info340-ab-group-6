@@ -4,7 +4,8 @@ function Card({ title, imageUrl, description, location, price, year, building, g
   return (
     <div className="col-md-6 col-xl-3 d-flex">
       <div className="card mb-4">
-        <img src={imageUrl} alt="Profile" className="card-img-top" />
+        {/* Image */}
+        <img src={imageUrl} alt={title} className="card-img-top" />
         <div className="card-body">
           <h5 className="card-title">{title}</h5>
           <p className="card-text">{description}</p>

@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Quandale 18",
-      "imageUrl": "images/test-profile.jpg",
+      "imageUrl": "./images/test-profile.jpg",
       "description": "Incoming Freshman who likes playing video games and going on hikes!",
       "location": "North Campus",
       "price": "800 - 1000",
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "title": "Bob 22",
-      "imageUrl": "images/test1.jpg",
+      "imageUrl": "./images/test1.jpg",
       "description": "\"Do one thing every day that scares you\"-Eleanor Roosevelt",
       "location": "West Campus",
       "price": "1200 - 1400",
@@ -24,7 +24,7 @@
     {
       "id": 3,
       "title": "Sam 19",
-      "imageUrl": "images/test2.jpg",
+      "imageUrl": "./images/test2.jpg",
       "description": "Reiciendis doloremque voluptas veniam repellendus quisquam deleniti tenetur quia a.",
       "location": "North Campus",
       "price": "1000 - 1200",

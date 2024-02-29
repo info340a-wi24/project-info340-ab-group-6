@@ -1,11 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Dub Match</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+    <style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+    .w3-bar-block .w3-bar-item {padding:20px}
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
+  <header class="w3-top header-background">
+    <nav>
+      <div class="w3-left w3-padding-16 header-text">Dub Match</div>
+      
+      <!-- Location Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Location</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="location" value="North Campus"> North Campus</label>
+          <label><input type="checkbox" name="location" value="West Campus"> West Campus</label>
+          <label><input type="checkbox" name="location" value="UVillage"> UVillage</label>
+        </div>
+      </div>
+      
+      <!-- Price Range Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Price Range</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="price" value="800 - 1000"> 800 - 1000</label>
+          <label><input type="checkbox" name="price" value="1000 - 1200"> 1000 - 1200</label>
+          <label><input type="checkbox" name="price" value="1200 - 1400"> 1200 - 1400</label>
+          <label><input type="checkbox" name="price" value="1400 - 1600"> 1400 - 1600</label>
+        </div>
+      </div>
+      
+      <!-- School Year Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">School Year</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="year" value="Freshman"> Freshman</label>
+          <label><input type="checkbox" name="year" value="Sophomore"> Sophomore</label>
+          <label><input type="checkbox" name="year" value="Junior"> Junior</label>
+          <label><input type="checkbox" name="year" value="Senior"> Senior</label>
+        </div>
+      </div>
+      
+      <!-- Building Type Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Building Type</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="building" value="Dorm"> Dorm</label>
+          <label><input type="checkbox" name="building" value="Apartment"> Apartment</label>
+        </div>
+      </div>
+      
+      <!-- Gender Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Gender</button>
+        <div class="dropdown-content">
+          <label><input type="checkbox" name="gender" value="Male"> Male</label>
+          <label><input type="checkbox" name="gender" value="Female"> Female</label>
+          <label><input type="checkbox" name="gender" value="They/Them"> They/Them</label>
+          <label><input type="checkbox" name="gender" value="Other"> Other</label>
+        </div>
+        <button class="dropbtn">Log In</button>
+      </div>
+      
+        
+    </nav>
+  </header>
+
+  <main id="root"></main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   
+      checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+          const filters = {};
+  
+          checkboxes.forEach(function (cb) {
+            if (cb.checked) {
+              const name = cb.name;
+              const value = cb.value;
+              if (!filters[name]) {
+                filters[name] = [];
+              }
+              filters[name].push(value);
+            }
+          });
+  
+          const cards = document.querySelectorAll('.card');
+  
+          cards.forEach(function (card) {
+            const data = {
+              location: card.getAttribute('data-location'),
+              price: card.getAttribute('data-price'),
+              year: card.getAttribute('data-year'),
+              building: card.getAttribute('data-building'),
+              gender: card.getAttribute('data-gender')
+            };
+  
+            let isVisible = true;
+  
+            for (const filterName in filters) {
+              if (filters.hasOwnProperty(filterName)) {
+                const filterValues = filters[filterName];
+                if (!filterValues.includes(data[filterName])) {
+                  isVisible = false;
+                  break;
+                }
+              }
+            }
+  
+            if (isVisible) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+  <script src="src/index.js"></script>
+
+
+
 </body>
 </html>
