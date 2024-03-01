@@ -4,17 +4,14 @@ import './css.css';
 import App from './components/App';
 // import reportWebVitals from './reportWebVitals';
 
-import cardData from './data/cards.json'; //the data to display
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-    const rootElement = ReactDOM.createRoot(root);
-    rootElement.render(
-      <React.StrictMode>
-        <App cardData={cardData} />
-      </React.StrictMode>
-    );
+  const rootElement = ReactDOM.createRoot(root);
+  rootElement.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
 });
 
 // If you want to start measuring performance in your app, pass a function
