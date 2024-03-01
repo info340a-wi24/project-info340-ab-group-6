@@ -81,7 +81,7 @@
     order: 2;
 }
 
-.card-body img {
+.card-img-top{
     width: 150px; 
     height: 150px; 
     object-fit: cover; 
