@@ -2,76 +2,70 @@ import React from 'react';
 
 function CreateProfile() {
   return (
-    <form>
-      <div className="container d-flex justify-content-center align-items-center vh-100">
-        <div className="card text-center header-background">
-          <div className="card-header">
-            <h1 className="header-text">CREATE PROFILE</h1>
-          </div>
-          <div className="card-body">
-            <div className="form-group">
-              <label htmlFor="FirstName">First Name</label>
-              <input type="text" className="form-control" id="FirstName" placeholder="Enter your first name" />
+    <section className="createProfile-wrap">
+        <h1>Create Profile</h1>
+        <form action="POST" className="create-form">
+            <h5>Name Information</h5>
+            <label>
+                <input className="form-input" type="text" id="First-Name" placeholder="Enter first name"/>
+            </label>
+            <label>
+                <input className="form-input" type="text" id="Last-Name" placeholder="Enter Last Name"/>
+            </label>
+            <div>  
+                <h5>Email</h5>          
+                <input type="email" className="form-input" id="Email" placeholder="Enter your email" />
             </div>
-            <div className="form-group">
-              <label htmlFor="LastName">Last Name</label>
-              <input type="text" className="form-control" id="LastName" placeholder="Enter your last name" />
+            <h5>Roomate Preferences</h5>
+            <div>
+                <label>
+                    <select className="form-control" id="Location">
+                        <option value="Location">Select Location</option>
+                        <option value="North Campus">North Campus</option>
+                        <option value="West Campus">West Campus</option>
+                        <option value="UVillage">UVillage</option>
+                    </select>
+                </label>
+                <label>
+                    <select className="form-control" id="Price">
+                        <option value="Price-Range">Select Price Range</option>
+                        <option value="800-1000">$800 - $1000</option>
+                        <option value="1000-1200">$1000 - $1200</option>
+                        <option value="1200-1400">$1200 - $1400</option>
+                        <option value="1400-1600">$1400 - $1600</option>
+                      </select>
+                </label>
             </div>
-            <div className="form-group">
-              <label htmlFor="Email">Email</label>
-              <input type="email" className="form-control" id="Email" placeholder="Enter your email" />
+            <div>
+                <label>
+                    <select className="form-control" id="Year">
+                        <option value="Year">Year</option>
+                        <option value="Freshman">Freshman</option>
+                        <option value="Sophomore">Sophomore</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Senior">Senior</option>
+                        </select>
+                </label>
+                <label>
+                    <select className="form-control" id="Building">
+                        <option value="Building-Type">Building Type</option>
+                        <option value="Dorm">Dorm</option>
+                        <option value="Apartment">Apartment</option>
+                    </select>
+                </label>
+                <label>
+                    <select className="form-control" id="Gender">
+                        <option value="Building-Type">Preffered Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="They/Them">They/Them</option>
+                        <option value="Other">Other</option>
+                        </select>
+                </label>
             </div>
-            <div className="form-group">
-              <label htmlFor="Password">Password</label>
-              <input type="password" className="form-control" id="Password" placeholder="Enter your password" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="Location">Location</label>
-              <select className="form-control" id="Location">
-                <option value="North Campus">North Campus</option>
-                <option value="West Campus">West Campus</option>
-                <option value="UVillage">UVillage</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="Price">Price</label>
-              <select className="form-control" id="Price">
-                <option value="800-1000">$800 - $1000</option>
-                <option value="1000-1200">$1000 - $1200</option>
-                <option value="1200-1400">$1200 - $1400</option>
-                <option value="1400-1600">$1400 - $1600</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="Year">Year</label>
-              <select className="form-control" id="Year">
-                <option value="Freshman">Freshman</option>
-                <option value="Sophomore">Sophomore</option>
-                <option value="Junior">Junior</option>
-                <option value="Senior">Senior</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="Building">Building</label>
-              <select className="form-control" id="Building">
-                <option value="Dorm">Dorm</option>
-                <option value="Apartment">Apartment</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="Gender">Gender</label>
-              <select className="form-control" id="Gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="They/Them">They/Them</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <button type="submit" className="btn btn-primary">Create</button>
-          </div>
-        </div>
-      </div>
-    </form>
+            <input className="submit" type="submit" value="Create Account"/>
+        </form>
+    </section>
   );
 }
 

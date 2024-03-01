@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './css.css';
 import App from './components/App';
+
 // import reportWebVitals from './reportWebVitals';
 
 import cardData from './data/cards.json'; //the data to display
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rootElement = ReactDOM.createRoot(root);
     rootElement.render(
       <React.StrictMode>
-        <App cardData={cardData} />
+          <App cardData={cardData} />
       </React.StrictMode>
     );
 });
