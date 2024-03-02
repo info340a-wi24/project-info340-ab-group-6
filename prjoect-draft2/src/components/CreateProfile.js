@@ -2,19 +2,20 @@ import React from 'react';
 
 function CreateProfile() {
   return (
+    <main className='main'>
     <section className="createProfile-wrap">
         <h1>Create Profile</h1>
         <form action="POST" className="create-form">
             <h5>Name Information</h5>
             <label>
-                <input className="form-input" type="text" id="First-Name" placeholder="Enter first name"/>
+                <input className="form-input2" type="text" id="First-Name" placeholder="Enter first name"/>
             </label>
             <label>
-                <input className="form-input" type="text" id="Last-Name" placeholder="Enter Last Name"/>
+                <input className="form-input2" type="text" id="Last-Name" placeholder="Enter Last Name"/>
             </label>
             <div>  
                 <h5>Email</h5>          
-                <input type="email" className="form-input" id="Email" placeholder="Enter your email" />
+                <input type="email" className="form-input2" id="Email" placeholder="Enter your email" />
             </div>
             <h5>Roomate Preferences</h5>
             <div>
@@ -66,6 +67,7 @@ function CreateProfile() {
             <input className="submit" type="submit" value="Create Account"/>
         </form>
     </section>
+    </main>
   );
 }
 

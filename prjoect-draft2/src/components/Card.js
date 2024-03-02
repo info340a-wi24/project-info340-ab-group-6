@@ -1,16 +1,7 @@
 import React from 'react';
-// import { Routes, Route, Link, useNavigate } from 'react-router-dom';
-// import Profile from './Profile'; // Adjust the path based on your file structure
-
 
 function Card({ title, imageUrl, description, location, price, year, building, gender }) {
-  // let navigate = useNavigate();
-
-  // const goToProfile = () => {
-  //   navigate('/Profile'); // Navigate to the profile page
-  // };
-  //onClick={goToProfile}
-  return (  
+  return (
     <div className="col-md-6 col-xl-3 d-flex">
       <div className="card mb-4">
         {/* Image */}
@@ -25,7 +16,7 @@ function Card({ title, imageUrl, description, location, price, year, building, g
             <li><strong>Building:</strong> {building}</li>
             <li><strong>Gender:</strong> {gender}</li>
           </ul>
-          <a className="btn btn-dark">Profile</a>
+          <a href="#" className="btn btn-dark">Profile</a>
         </div>
       </div>
     </div>

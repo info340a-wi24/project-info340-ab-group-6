@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url('sign-in\Images\uwflag.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: #800080;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 35rem;
+    background-color: #FFFFFF;
+    border: 2px solid #800080;
+    color: #800080;
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #800080;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 0;
+    border: 2px solid #800080;
+    color: #800080;
+    background-color: #FFFFFF;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #800080; 
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+

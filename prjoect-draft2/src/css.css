@@ -85,7 +85,7 @@
     order: 2;
 }
 
-.card-body img {
+.card-img-top{
     width: 150px; 
     height: 150px; 
     object-fit: cover; 
@@ -156,4 +156,274 @@ div{
 .form-control{
     padding: 10px 20px;
 
+}
+
+
+/* -----------------------This is the CSS for SignIN----------------------------------------------------------------------- */
+.login-form-wrap {
+	background: radial-gradient(ellipse at center,  rgba(81,112,173,1) 0%,rgba(51, 0, 111,1) 100%);
+	border:1px solid #2d416d;
+	box-shadow: 0 1px #5670A4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	width: 360px;
+	height: 380px;
+	margin: 60px auto;
+	padding: 50px 30px 0 30px;
+	text-align: center;
+	
+	h1 {
+		margin: 0 0 50px 0;
+		padding: 0;  
+		font-size: 26px;
+		color: #fff;
+	}
+	h5 {
+		margin-top: 40px;
+        text-decoration: underline;
+	}
+	h5 > a {
+		font-size: 14px;
+		color: #fff;
+		text-decoration: underline; 
+		font-weight: 400;
+	}
+}
+
+.form-input{
+    width: 100%; 
+    border: 1px solid #314d89;
+    outline: none;
+    padding: 12px 20px;
+    color: #afafaf;
+    font-weight: 400;
+  font-family: 'Lato', sans-serif;
+    cursor:pointer;
+}
+
+
+.login-form {
+	& input[type="email"] {
+		border-bottom: 2px; 
+		border-radius: 4px 4px 0 0;
+		padding-bottom: 13px;
+		box-shadow: 0 -1px 0 #E0E0E0 inset,
+					0 1px 2px rgba(0, 0, 0, 0.23) inset;
+	}
+
+	& input[type="password"] {
+		border-top: none; 
+		border-radius: 0 0 4px 4px;
+		box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.23) inset,
+					0 1px 2px rgba(255, 255, 255, 0.1);
+	}
+
+	& input[type="submit"] {
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+		background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 100%;
+		border: none;
+		border-radius: 3px;
+		padding: 8px;
+		font-size: 17px;
+		color: #636363;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+		font-weight: 700;
+		box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+
+    
+    &:active {
+      padding-top: 9px;
+      padding-bottom: 7px;
+      background: #C9C9C9; 
+    }
+	}
+}
+
+
+/* -----------------------This is the CSS for CreateProfile----------------------------------------------------------------------- */
+/* * {
+	box-sizing: border-box; 
+} */
+
+.main {
+	background: radial-gradient(ellipse at center,  rgba(81,112,173,1) 0%,rgba(51, 0, 111,1) 100%);
+	margin:0;
+	padding:0; 
+}
+h5{
+    color: #f7eeee;
+}
+
+
+.createProfile-wrap {
+	box-sizing: border-box;
+  background: radial-gradient(ellipse at center,  rgba(81,112,173,1) 0%,rgba(51, 0, 111,1) 100%);
+	margin:0;
+	padding:0; 
+  border:1px solid #2d416d;
+	box-shadow: 0 1px #5670A4 inset, 0 0 10px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	width: 100%;
+	height: 150%;
+	padding: 50px 30px 50px 30px; 
+	text-align: center;
+	
+	h1 {
+		margin: 0 0 50px 0;
+		padding: 0;  
+		font-size: 26px;
+		color: #fff;
+	}
+}
+
+
+
+.create-form {
+	& input[type="submit"] {
+	  font-family: 'Lato', sans-serif;
+	  font-weight: 400;
+		background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 50%;
+		border: none;
+		border-radius: 3px;
+		padding: 8px;
+		font-size: 17px;
+		color: #636363;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+		font-weight: 500;
+		box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+
+    
+    &:active {
+      padding-top: 9px;
+      padding-bottom: 7px;
+      background: #C9C9C9; 
+    }
+	}
+}
+
+div{
+    padding: 10px 0 10px 0;
+}
+
+.form-control{
+    padding: 10px 20px;
+
+}
+
+/* -----------------------This is the CSS for Profile----------------------------------------------------------------------- */
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Header styles */
+.headbar {
+  background-color: #33006F;
+  color: white;
+  padding: 1rem;
+  display: flex; /* Align logo and edit button */
+  justify-content: space-between; /* Separate logo and edit button */
+  align-items: center; /* Center items vertically */
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.edit button {
+  background-color: #f5f5f5;
+  color: #33006F;
+  border: 2px solid #33006F;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit button:hover {
+  background-color: #33006F;
+  color: #f5f5f5;
+}
+
+/* Main container styles */
+.main-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 2rem;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+/* Profile container styles */
+.profile-container {
+  flex: 1; /* Flex grow */
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-header, .profile-about-container, .profile-looking-for {
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #25013b;
+}
+
+
+/* Image styles */
+.profile-picture {
+  width: 175px;
+  height: 175px;
+  border-radius: 25%;
+  border: 4px solid #33006F;
+  margin-bottom: 1rem;
+}
+
+/* Typography */
+h2, h3, p {
+  margin-bottom: 1rem; /* Adds space below each text element */
+}
+
+/* Link styles */
+a {
+  text-decoration: none; /* Removes underline */
+}
+
+/* Additional section styles */
+.additional-section {
+  flex: 1; /* Flex grow */
+  max-width: 40%;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+
+.SizingChange {
+  transition: transform 0.2s; /* Smooth transform effect */
+}
+
+.SizingChange:hover {
+  transform: scale(1.1); /* Slightly enlarges images on hover */
 }
