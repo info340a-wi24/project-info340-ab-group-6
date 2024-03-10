@@ -2,8 +2,10 @@
     {
       "id": 1,
       "title": "Quandale 18",
-      "imageUrl": "./images/test-profile.jpg",
+      "imageUrl": "/images/test-profile.jpg",
       "description": "Incoming Freshman who likes playing video games and going on hikes!",
+      "about": "My name is Quandale Sherman and I am an incoming Freshman Studying CS at UW. I love hiking, playing video games... lored eida abdeubd",
+      "looking": "Someone who likes going out, likes sports, but would stay focused on school during finals week. Looking to room in West Campus but open for any suggestions. Don't be afraid to reach out.",
       "location": "North Campus",
       "price": "800 - 1000",
       "year": "Freshman",
@@ -13,8 +15,10 @@
     {
       "id": 2,
       "title": "Bob 22",
-      "imageUrl": "./images/test1.jpg",
+      "imageUrl": "/images/test1.jpg",
       "description": "\"Do one thing every day that scares you\"-Eleanor Roosevelt",
+      "about": "My name is Bob and I like ice cream",
+      "looking": "Someone who is clean.",
       "location": "West Campus",
       "price": "1200 - 1400",
       "year": "Junior",
@@ -24,8 +28,10 @@
     {
       "id": 3,
       "title": "Sam 19",
-      "imageUrl": "./images/test2.jpg",
+      "imageUrl": "/images/test2.jpg",
       "description": "Reiciendis doloremque voluptas veniam repellendus quisquam deleniti tenetur quia a.",
+      "about": "My name is Sam asdfsadfwaseff",
+      "looking": "fewahnrtyjytdgjhrfthdrrdhjtxyh.",
       "location": "North Campus",
       "price": "1000 - 1200",
       "year": "Sophomore",
@@ -35,7 +41,7 @@
     {
       "id": 4,
       "title": "Sara 21",
-      "imageUrl": "images/test3.jpg",
+      "imageUrl": "/images/test3.jpg",
       "description": "Freshman looking to make new friends. I like swimming and eating food",
       "location": "North Campus",
       "price": "800 - 1000",
@@ -46,7 +52,7 @@
     {
       "id": 5,
       "title": "Jon 23",
-      "imageUrl": "images/test4.jpg",
+      "imageUrl": "/images/test4.jpg",
       "description": "Freshman studying biology hoping to become a doctor one day",
       "location": "West Campus",
       "price": "1400 - 1600",
@@ -57,7 +63,7 @@
     {
       "id": 6,
       "title": "James 18",
-      "imageUrl": "images/test5.jpg",
+      "imageUrl": "/images/test5.jpg",
       "description": "Incoming Freshman looking to find people with similar majors",
       "location": "North Campus",
       "price": "1000 - 1200",
@@ -68,7 +74,7 @@
     {
       "id": 7,
       "title": "Lacy 18",
-      "imageUrl": "images/test7.jpg",
+      "imageUrl": "/images/test7.jpg",
       "description": "Incoming sophomore looking to find new friends and create meaningful connections",
       "location": "West Campus",
       "price": "800 - 1000",
@@ -79,7 +85,7 @@
     {
       "id": 8,
       "title": "Stacy 24",
-      "imageUrl": "images/test6.jpg",
+      "imageUrl": "/images/test6.jpg",
       "description": "Passionate about running and working out.",
       "location": "West Campus",
       "price": "1000 - 1200",

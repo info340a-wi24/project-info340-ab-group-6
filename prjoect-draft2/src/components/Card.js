@@ -1,13 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Card({ title, imageUrl, description, location, price, year, building, gender }) {
+function Card({ id, title, imageUrl, description, location, price, year, building, gender }) {
+  let navigate = useNavigate();
+
+  // Updated navigate function call to use the profile ID
   return (
     <div className="col-md-6 col-xl-3 d-flex">
       <div className="card mb-4">
         {/* Image */}
         <img src={imageUrl} alt={title} className="card-img-top" />
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
+          <h3 className="card-title">{title}</h3>
           <p className="card-text">{description}</p>
           <ul className="list-unstyled">
             <li><strong>Location:</strong> {location}</li>
@@ -16,7 +20,8 @@ function Card({ title, imageUrl, description, location, price, year, building, g
             <li><strong>Building:</strong> {building}</li>
             <li><strong>Gender:</strong> {gender}</li>
           </ul>
-          <a href="#" className="btn btn-dark">Profile</a>
+
+          <button onClick={() => navigate(`/profile/${id}`)}>View Profile</button>
         </div>
       </div>
     </div>

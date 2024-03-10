@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import { useNavigate } from 'react-router-dom';
+
 
 function HomePage() {
+  let navigate = useNavigate();
+
   const [cards, setCards] = useState([]);
   const [filters, setFilters] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -112,13 +116,16 @@ if (error) return <div>Error: {error}</div>;
             </div>
           </div>
         </nav>
+
+        <button onClick={() => navigate('/CreateProfile')}>Create a Profile</button>
       </header>
 
       {/* Cards Section */}
       <div className="row" style={{ marginTop: '60px' }}> 
         {filteredCards.map((card, index) => (
           <Card
-            key={index}
+            key={card.id}
+            id={card.id}
             title={card.title}
             imageUrl={card.imageUrl}
             description={card.description}

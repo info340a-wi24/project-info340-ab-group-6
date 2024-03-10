@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import HomePage from './HomePage';
 import CreateProfile from './CreateProfile'
 import SignIn from './SignIn'
@@ -12,9 +14,9 @@ function App() {
       <Routes>
 
         {<Route path="/" element={<HomePage />} />}
-        {/* <Route path="/" element={<SignIn />}/> */}
-        {/* {<Route path="/" element={<CreateProfile />} />} */}
-        {/* {<Route path="/" element={<Profile />} />} */}
+        {<Route path="/SignIn" element={<SignIn />}/>}
+        {<Route path="/CreateProfile" element={<CreateProfile />} />}
+        <Route path="/profile/:profileId" element={<Profile />} />
         </Routes>
 
       </div>

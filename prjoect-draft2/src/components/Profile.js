@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 
 
 function Profile() {
+  const { profileId } = useParams();
+
+  const [profile, setProfile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/data/cards.json');
+        if (!response.ok) {
+          throw new Error('Data could not be fetched!');
+        }
+        const data = await response.json();
+        const foundProfile = data.find(p => p.id === parseInt(profileId, 10));
+        if (!foundProfile) {
+          throw new Error('Profile not found!');
+        }
+        setProfile(foundProfile);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [profileId]);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!profile) return <div>Profile not found</div>;
+
   return (
     <>
       <header>
@@ -9,32 +44,30 @@ function Profile() {
           <div className="logo">DubMatch</div> 
         </nav>
         <button className="edit">
-          {/* <span className="material-symbols-outlined">
-            edit
-          </span> */}
           Edit profile
         </button>
       </header>
       <main className="main-container">
         <div className="profile-container">
           <section className="profile-header">
-            <img src={`${process.env.PUBLIC_URL}/images/test-profile.jpg`} alt="Profile Picture" className="profile-picture" />
+            {/* Use dynamic data from JSON */}
+            <img src={profile.imageUrl} alt="Profile" className="profile-picture" />
 
-            <h2>Quandale Sherman, 18</h2>
-            <p>He/Him</p>
-            <p>Incoming Freshman majoring in Computer Science</p>
+            <h2>{profile.title}</h2>
+            <p>{profile.gender}</p>
+            <p>{profile.description}</p>
           </section>
           
           <section className="profile-about-container">
             <div className="profile-about">
               <h3>About Me</h3>
-              <p>My name is Quandale Sherman and I am an incoming Freshman Studying CS at UW. I love hiking, playing video games... lored eida abdeubd</p>
+              <p>{profile.about}</p>
             </div>
           </section>
           
           <section className="profile-looking-for">
             <h3>Looking For</h3>
-            <p>Someone who likes going out, likes sports, but would stay focused on school during finals week. Looking to room in West Campus but open for any suggestions. Don't be afraid to reach out.</p>
+            <p>{profile.looking}</p>
           </section>
         </div>
         <div className="additional-section">
