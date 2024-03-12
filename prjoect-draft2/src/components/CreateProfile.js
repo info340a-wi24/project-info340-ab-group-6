@@ -1,31 +1,21 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function CreateProfile() {
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    navigate(-1);
-  };
 
   return (
     <main className='main'>
       <section className="createProfile-wrap">
         <h1>Create Profile</h1>
-        <form onSubmit={handleSubmit} className="create-form">
-          <h5>Name Information</h5>
+        <form action="POST" className="create-form">
+          <h5>Name</h5>
           <label>
-            <input className="form-input2" type="text" id="First-Name" placeholder="Enter first name"/>
-          </label>
-          <label>
-            <input className="form-input2" type="text" id="Last-Name" placeholder="Enter Last Name"/>
+            <input className="form-input2" type="text" placeholder="Enter your name"/>
           </label>
           <div>  
             <h5>Email</h5>          
-            <input type="email" className="form-input2" id="Email" placeholder="Enter your email" />
+            <input type="email" className="form-input2" placeholder="Enter your email" />
           </div>
-          <h5>Roommate Preferences</h5>
+          <h5>Roomate Preferences</h5>
           <div>
             <label>
               <select className="form-control" id="Location">
@@ -64,12 +54,25 @@ function CreateProfile() {
             </label>
             <label>
               <select className="form-control" id="Gender">
-                <option value="Building-Type">Preferred Gender</option>
+                <option value="Building-Type">Preffered Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
                 <option value="They/Them">They/Them</option>
                 <option value="Other">Other</option>
               </select>
+            </label>
+          </div>
+          <div>
+            <h5>Age</h5>
+            <label>
+              <input className="form-input2" type="text" placeholder="Enter your age"/>
+            </label>
+          </div>
+          <div>
+            <h5>Upload Profile Picture</h5>
+            <label className="upload-profile">
+              <input type="file" />
+              <span>Choose file</span>
             </label>
           </div>
           <input className="submit" type="submit" value="Create Account"/>
@@ -80,5 +83,3 @@ function CreateProfile() {
 }
 
 export default CreateProfile;
-
-
