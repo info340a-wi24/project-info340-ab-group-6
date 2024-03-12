@@ -137,6 +137,12 @@ if (error) return <div>Error: {error}</div>;
           />
         ))}
       </div>
+
+      {/* Footer Section */}
+      <footer style={{ marginTop: '20px', padding: '20px', textAlign: 'center', backgroundColor: '#f0f0f0' }}>
+        <p>© {new Date().getFullYear()} DubMatch. All rights reserved.</p>
+      </footer>
+
     </div>
   );
 }
