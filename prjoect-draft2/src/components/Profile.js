@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
+import { getDatabase, ref, onValue, child } from 'firebase/database';
 
 
 function Profile() {
@@ -10,27 +11,27 @@ function Profile() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch('/data/cards.json');
-        if (!response.ok) {
-          throw new Error('Data could not be fetched!');
+    setIsLoading(true);
+    const db = getDatabase();
+    const index = parseInt(profileId, 10) - 1;
+    const profileRef = ref(db, '/' + index); 
+  
+    onValue(profileRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const profileData = snapshot.val();
+        if (profileData && profileData.id === parseInt(profileId, 10)) {
+          setProfile(profileData);
+        } else {
+          setError('Profile ID does not match the data');
         }
-        const data = await response.json();
-        const foundProfile = data.find(p => p.id === parseInt(profileId, 10));
-        if (!foundProfile) {
-          throw new Error('Profile not found!');
-        }
-        setProfile(foundProfile);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
+      } else {
+        setError('Profile not found');
       }
-    };
-
-    fetchData();
+      setIsLoading(false);
+    }, (errorObject) => {
+      setError('Firebase read failed: ' + errorObject.message);
+      setIsLoading(false);
+    });
   }, [profileId]);
 
   if (isLoading) return <div>Loading...</div>;

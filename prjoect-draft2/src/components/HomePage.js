@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
 import { useNavigate } from 'react-router-dom';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 
 function HomePage() {
@@ -13,23 +14,22 @@ function HomePage() {
 
 
   useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch('/data/cards.json');
-        if (!response.ok) {
-          throw new Error('Data could not be fetched!');
-        }
-        const data = await response.json();
-        setCards(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setIsLoading(false);
+    setIsLoading(true);
+    const db = getDatabase();
+    const cardsRef = ref(db); 
+    onValue(cardsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setCards(Object.values(data));
+      } else {
+        setError('No data available');
       }
-    };
-    fetchData();
-}, []);
+      setIsLoading(false);
+    }, (error) => {
+      setError(error.message);
+      setIsLoading(false);
+    });
+  }, []);
 
 if (isLoading) return <div>Loading...</div>;
 if (error) return <div>Error: {error}</div>;
@@ -76,7 +76,7 @@ if (error) return <div>Error: {error}</div>;
               <label><input type="checkbox" name="location" value="UVillage" onChange={handleFilterChange} /> UVillage</label>
             </div>
           </div>
-
+    
           {/* Price Range Dropdown */}
           <div className="dropdown">
             <button className="dropbtn">Price Range</button>
