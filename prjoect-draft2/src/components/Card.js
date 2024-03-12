@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function Card({ id, title, imageUrl, description, location, price, year, building, gender }) {
+function Card({ id, name, age, imageUrl, description, location, price, year, building, gender }) {
   let navigate = useNavigate();
 
   
@@ -9,9 +9,9 @@ function Card({ id, title, imageUrl, description, location, price, year, buildin
     <div className="col-md-6 col-xl-3 d-flex">
       <div className="card mb-4">
         {/* Image */}
-        <img src={imageUrl} alt={title} className="card-img-top" />
+        <img src={imageUrl} alt={name} className="card-img-top" />
         <div className="card-body">
-          <h3 className="card-title">{title}</h3>
+          <h3 className="card-title">{name}, {age}</h3>
           <p className="card-text">{description}</p>
           <ul className="list-unstyled">
             <li><strong>Location:</strong> {location}</li>

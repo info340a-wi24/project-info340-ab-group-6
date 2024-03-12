@@ -126,7 +126,8 @@ if (error) return <div>Error: {error}</div>;
           <Card
             key={card.id}
             id={card.id}
-            title={card.title}
+            name={card.name}
+            age={card.age}
             imageUrl={card.imageUrl}
             description={card.description}
             location={card.location}

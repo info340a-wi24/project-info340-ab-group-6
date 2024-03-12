@@ -43,9 +43,6 @@ function Profile() {
         <nav className="headbar">
           <div className="logo">DubMatch</div> 
         </nav>
-        <button className="edit">
-          Edit profile
-        </button>
       </header>
       <main className="main-container">
         <div className="profile-container">
@@ -53,8 +50,10 @@ function Profile() {
             {/* Use dynamic data from JSON */}
             <img src={profile.imageUrl} alt="Profile" className="profile-picture" />
 
-            <h2>{profile.title}</h2>
-            <p>{profile.gender}</p>
+            {/* change*/}
+            <h2>{profile.name}</h2>
+            <p>{profile.gender}, {profile.age}</p>
+            <p>{profile.email}</p>
             <p>{profile.description}</p>
           </section>
           
@@ -70,7 +69,7 @@ function Profile() {
             <p>{profile.looking}</p>
           </section>
         </div>
-        <div className="additional-section">
+        {/* <div className="additional-section">
           <h3>Social Media and Music</h3>
           <a href="https://instagram.com/yourProfile" target="_blank" title="Check out my Instagram">
           <img className="SizingChange" src={`${process.env.PUBLIC_URL}/images/insta.svg`} alt="Insta" style={{width: "75px", height: "auto", paddingLeft: "10px"}}/>
@@ -91,7 +90,7 @@ function Profile() {
           <h3 style={{paddingTop: "5%"}}>Favorite CS Projects</h3>
           <img src={`${process.env.PUBLIC_URL}/images/Chess.webp`} alt="Chses" style={{width: "40%"}}/>
           <img src={`${process.env.PUBLIC_URL}/images/chatbot.webp`} alt="chatbot" style={{width: "30%"}}/>
-        </div>
+        </div> */}
       </main>
     </>
   );
