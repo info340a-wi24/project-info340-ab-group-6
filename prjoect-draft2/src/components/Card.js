@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Card({ id, title, imageUrl, description, location, price, year, building, gender }) {
   let navigate = useNavigate();
 
-  // Updated navigate function call to use the profile ID
+  
   return (
     <div className="col-md-6 col-xl-3 d-flex">
       <div className="card mb-4">
