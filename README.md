@@ -1,4 +1,4 @@
-#DubMatch: Find Your Roommate Here
+# DubMatch: Find Your Roommate Here
 
 Functionalities:
 Browse and Filter: Use our filtering options to explore potential matches. You can adjust the filters to refine your search at any time.
