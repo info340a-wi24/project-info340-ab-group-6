@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { getDatabase, ref as dbRef, push } from 'firebase/database';
+
 
 function Card({ id, name, age, imageUrl, description, location, price, year, building, gender }) {
   let navigate = useNavigate();
