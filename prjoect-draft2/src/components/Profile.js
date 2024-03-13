@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { getDatabase, ref, onValue, child } from 'firebase/database';
-import {keyThing} from './CreateProfile.js';
 
 
 function Profile() {
@@ -15,18 +14,17 @@ function Profile() {
     setIsLoading(true);
     const db = getDatabase();
     const index = parseInt(profileId, 10) - 1;
-    const profileRef = ref(db);
-  //console.log(index);
+    const profileRef = ref(db, '/' + index);
+  console.log(index);
     onValue(profileRef, (snapshot) => {
       if (snapshot.exists()) {
-        //console.log(snapshot);
+        
         const profileData = snapshot.val();
-        setProfile(profileData);
-        // if (profileData && profileData.id === parseInt(profileId, 10)) {
-        //   setProfile(profileData);
-        // } else {
-        //   setError('Profile ID does not match the data');
-        // }
+        if (profileData && profileData.id === parseInt(profileId, 10)) {
+          setProfile(profileData);
+        } else {
+          setError('Profile ID does not match the data');
+        }
       } else {
         setError('Profile not found');
       }
@@ -99,8 +97,6 @@ function Profile() {
     </>
   );
 }
-
-
 
 
 export default Profile;

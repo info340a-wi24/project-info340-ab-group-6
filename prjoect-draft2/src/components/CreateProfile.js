@@ -5,6 +5,7 @@ import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'fire
 
 function CreateProfile() {
   const navigate = useNavigate();
+
   const [name, setName] = useState('');
   const [image, setImage] = useState(null);
   const [submitError, setSubmitError] = useState('');
@@ -21,19 +22,17 @@ function CreateProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const db = getDatabase();
-    const storage = getStorage();
-    
+
     if (image) {
+      const storage = getStorage();
       const imageRef = storageRef(storage, `profileImages/${image.name}`);
       uploadBytes(imageRef, image).then((snapshot) => {
         getDownloadURL(snapshot.ref).then((downloadURL) => {
           const newProfileRef = dbRef(db);
           push(newProfileRef, { name, imageUrl: downloadURL }).then((ref) => {
-            console.log(ref.key);
-            console.log(newProfileRef);
-            navigate('/');
+            console.log(ref.key); // Key of the new record
+            navigate('/'); // Navigate to the homepage or show a success message
           }).catch((error) => {
             console.error("Error adding document: ", error);
             setSubmitError('Failed to create profile. Please try again.');
@@ -44,10 +43,10 @@ function CreateProfile() {
         setSubmitError('Failed to upload image. Please try again.');
       });
     } else {
+      // Handle the case when there is no image
       const newProfileRef = dbRef(db);
       push(newProfileRef, { name }).then((ref) => {
-        console.log(ref.key);
-        console.log(newProfileRef);
+        console.log(ref.key); // Key of the new record
         navigate('/');
       }).catch((error) => {
         console.error("Error adding document: ", error);
@@ -59,7 +58,7 @@ function CreateProfile() {
   return (
     <main className='main'>
       <section className="createProfile-wrap">
-        <h1>Crete Profile</h1>
+        <h1>Create Profile</h1>
         <form onSubmit={handleSubmit} className="create-form">
           <div>
             <h5>Name</h5>
@@ -70,7 +69,7 @@ function CreateProfile() {
             <input type="file" onChange={handleImageChange} />
           </div>
           {submitError && <div className="error-message">{submitError}</div>}
-          <input className="submit" type="submit" value="Create Account" />
+          <input className="submit" type="submit" value="Create Account"/>
         </form>
       </section>
     </main>
