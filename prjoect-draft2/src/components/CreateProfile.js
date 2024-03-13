@@ -22,9 +22,12 @@ function CreateProfile() {
     const profile = { name };
     
     const db = getDatabase();
-    const newProfileRef = ref(db, "8"); // Ensure you have a specific path if needed
-    console.log(newProfileRef.key);
-    push(newProfileRef, profile).then(() => {
+    const newProfileRef = ref(db); // Ensure you have a specific path if needed
+    //console.log(newProfileRef.key);
+    push(newProfileRef, profile).then((ref) => {
+        const keyThing = ref.key;
+        console.log(keyThing)
+
       navigate('/'); // Navigate to the homepage or show a success message
     }).catch((error) => {
       console.error("Error adding document: ", error);
@@ -36,6 +39,10 @@ const handleNameChange = (e) => {
     console.log(`Changing name to ${e.target.value}`);
     setName(e.target.value);
   };
+
+// function getKey() {
+//     return(keyThing);
+// }
 
   return (
     <main className='main'>
@@ -119,5 +126,5 @@ const handleNameChange = (e) => {
     </main>
   );
 }
-
+export {keyThing};
 export default CreateProfile;

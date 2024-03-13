@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { getDatabase, ref, onValue, child } from 'firebase/database';
+import {keyThing} from './CreateProfile.js';
 
 
 function Profile() {
@@ -14,8 +15,8 @@ function Profile() {
     setIsLoading(true);
     const db = getDatabase();
     const index = parseInt(profileId, 10) - 1;
-    const profileRef = ref(db, '/' + index);
-  console.log(index);
+    const profileRef = ref(db);
+  //console.log(index);
     onValue(profileRef, (snapshot) => {
       if (snapshot.exists()) {
         
