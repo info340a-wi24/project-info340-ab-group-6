@@ -3,32 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import { getDatabase, ref, push } from 'firebase/database';
 
 function CreateProfile() {
-
   const navigate = useNavigate();
 
-  const [profile, setProfile] = useState({
-    name: '',
-    email: '',
-    location: '',
-    price: '',
-    year: '',
-    building: '',
-    gender: '',
-    age: '',
-  });
+  const [name, setName] = useState('');
+//   const [email, setEmail] = useState('');
+//   const [location, setLocation] = useState('');
+//   const [price, setPrice] = useState('');
+//   const [year, setYear] = useState('');
+//   const [building, setBuilding] = useState('');
+//   const [gender, setGender] = useState('');
+//   const [age, setAge] = useState('');
 
   const [submitError, setSubmitError] = useState('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProfile({ ...profile, [name]: value });
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const profile = { name };
     
     const db = getDatabase();
-    const newProfileRef = ref(db);
+    const newProfileRef = ref(db, "8"); // Ensure you have a specific path if needed
+    console.log(newProfileRef.key);
     push(newProfileRef, profile).then(() => {
       navigate('/'); // Navigate to the homepage or show a success message
     }).catch((error) => {
@@ -37,16 +32,23 @@ function CreateProfile() {
     });
   };
 
+const handleNameChange = (e) => {
+    console.log(`Changing name to ${e.target.value}`);
+    setName(e.target.value);
+  };
+
   return (
     <main className='main'>
+
       <section className="createProfile-wrap">
         <h1>Create Profile</h1>
         <form onSubmit={handleSubmit} className="create-form">
-          <h5>Name</h5>
-          <label>
-            <input className="form-input2" type="text" placeholder="Enter your name" value={profile.name} onChange={handleChange}/>
-          </label>
-          <div>  
+          {/* Input fields now each have their own state and setter function */}
+          <div>
+            <h5>Name</h5>
+            <input type="text" className="form-input2" placeholder="Enter your name" value={name} onChange={handleNameChange} />
+          </div>
+          {/* <div>  
             <h5>Email</h5>          
             <input type="email" className="form-input2" placeholder="Enter your email" value={profile.email} onChange={handleChange}/>
           </div>
@@ -108,9 +110,9 @@ function CreateProfile() {
             <label className="upload-profile">
               <input type="file" />
               <span>Choose file</span>
-            </label>
-          {submitError && <div className="error-message">{submitError}</div>}
-          </div>
+            </label> */}
+          {/* {submitError && <div className="error-message">{submitError}</div>} */}
+          {/* </form></div> */}
           <input className="submit" type="submit" value="Create Account"/>
         </form>
       </section>

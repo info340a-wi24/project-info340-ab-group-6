@@ -14,10 +14,11 @@ function Profile() {
     setIsLoading(true);
     const db = getDatabase();
     const index = parseInt(profileId, 10) - 1;
-    const profileRef = ref(db, '/' + index); 
-  
+    const profileRef = ref(db, '/' + index);
+  console.log(index);
     onValue(profileRef, (snapshot) => {
       if (snapshot.exists()) {
+        
         const profileData = snapshot.val();
         if (profileData && profileData.id === parseInt(profileId, 10)) {
           setProfile(profileData);
