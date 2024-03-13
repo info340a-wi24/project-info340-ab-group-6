@@ -19,13 +19,14 @@ function Profile() {
   //console.log(index);
     onValue(profileRef, (snapshot) => {
       if (snapshot.exists()) {
-        
+        //console.log(snapshot);
         const profileData = snapshot.val();
-        if (profileData && profileData.id === parseInt(profileId, 10)) {
-          setProfile(profileData);
-        } else {
-          setError('Profile ID does not match the data');
-        }
+        setProfile(profileData);
+        // if (profileData && profileData.id === parseInt(profileId, 10)) {
+        //   setProfile(profileData);
+        // } else {
+        //   setError('Profile ID does not match the data');
+        // }
       } else {
         setError('Profile not found');
       }
